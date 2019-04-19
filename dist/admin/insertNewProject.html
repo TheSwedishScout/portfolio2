@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>insert project - Max Timje</title>
+        <link rel="stylesheet" href="../css/null.css" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+            crossorigin="anonymous"
+        />
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="js/admin.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="whiteborder">
+                <img class="logo" src="../images/logo.png" />
+                <h1>Contact</h1>
+                <p class="tag-line">Front-end developer</p>
+                <nav class="main-menu">
+                    <ul>
+                        <li class="menu-item active">
+                            <a href="contact.html">Contact</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="projects.html">Webb</a>
+                        </li>
+                        <li class="menu-item"><a href="">Photo</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main class="whiteborder">
+                <form
+                    id="addNewprojectForm"
+                    method="post"
+                    enctype="multipart/form-data"
+                >
+                    <label>
+                        Name
+                        <input type="text" name="name" id="name" />
+                    </label>
+                    <label>
+                        project description
+                        <textarea
+                            name="description"
+                            id="description"
+                            cols="30"
+                            rows="10"
+                        ></textarea>
+                    </label>
+                    <label>
+                        Short description
+                        <input type="text" name="short_description" id="" />
+                    </label>
+                    <label>
+                        active url to project
+                        <input type="text" name="link" id="link" />
+                    </label>
+                    <label>
+                        link to github resp
+                        <input type="text" name="githublink" id="githublink" />
+                    </label>
+                    <label>
+                        image of project
+                        <input
+                            type="file"
+                            name="fileToUpload"
+                            id="fileToUpload"
+                        />
+                    </label>
+
+                    <input type="submit" name="submit" value="save" />
+                </form>
+            </main>
+            <footer>
+                <div class="socialmedia">
+                    <ul>
+                        <li class="linkedin">
+                            <i class="fab fa-3x fa-linkedin"></i>
+                        </li>
+                        <li class="github">
+                            <i class="fab fa-3x fa-github"></i>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
