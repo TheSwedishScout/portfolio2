@@ -28,10 +28,20 @@ body.contact {
   background-image: url("../images/backgrounds/Max-Timje-2.jpg");
 }
 
+body.projects {
+  background-image: url("../images/backgrounds/Max-Timje-3.jpg");
+}
+
+body.photos {
+  background-image: url("../images/backgrounds/Max-Timje-4.jpg");
+}
+
 .wrapper {
   display: -ms-grid;
   display: grid;
   width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   min-height: calc(100vh - 4px);
   -ms-grid-rows: 7rem auto auto 4rem;
       grid-template-rows: 7rem auto auto 4rem;
@@ -41,6 +51,7 @@ body.contact {
 header {
   -ms-grid-row: 1;
   grid-row: 1;
+  padding-top: 5px;
   margin: 4px;
 }
 
@@ -48,6 +59,19 @@ header .logo {
   height: 2em;
   display: inline-block;
   vertical-align: sub;
+  margin: 5px;
+}
+
+header .logo img {
+  height: 100%;
+}
+
+header .text {
+  display: inline;
+}
+
+header .tag {
+  display: none;
 }
 
 header h1 {
@@ -58,7 +82,6 @@ header h1 {
 
 header .tag-line {
   text-align: center;
-  margin-top: -0.5em;
 }
 
 header nav {
@@ -103,8 +126,8 @@ header nav ul .active {
   font-size: 4em;
 }
 
-.home header .text .tag {
-  display: none;
+.home header .text .tag-line {
+  margin-top: -0.5em;
 }
 
 @media screen and (min-width: 400px) {
@@ -138,6 +161,12 @@ form textarea {
   background: white;
 }
 
+form input[type="checkbox"],
+form textarea[type="checkbox"] {
+  height: 1em;
+  width: 1em;
+}
+
 form textarea {
   resize: vertical;
   min-height: 6.4em;
@@ -148,6 +177,68 @@ form label * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: block;
+}
+
+#project-list {
+  list-style: none;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-gap: 2em;
+}
+
+@media screen and (min-width: 400px) {
+  #project-list {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+#project-list > li {
+  background: white;
+}
+
+#project-list figure {
+  text-align: center;
+}
+
+#project-list figure img {
+  max-width: 100%;
+}
+
+#project-list .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#project-list .links li a {
+  display: inline-block;
+  padding: 4px;
+  background: #dedede;
+}
+
+#project-list .links li a:hover {
+  background: #707070;
+  color: #dedede;
+}
+
+#project-list p {
+  margin-top: 10px;
+}
+
+#project-list .tools {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 footer {
@@ -169,17 +260,20 @@ footer .socialmedia ul {
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
   list-style: none;
-  color: #346eda;
 }
 
 footer .socialmedia ul li:not(:last-child) {
   margin-left: 8px;
 }
 
+footer .socialmedia ul li a {
+  color: #3e62a5;
+}
+
 @media screen and (min-width: 600px) {
   header {
     width: 400px;
-    margin: 0 auto;
+    margin: 6px auto;
   }
   main {
     width: 600px;

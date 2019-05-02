@@ -3,6 +3,19 @@ document.addEventListener("DOMContentLoaded", e => {
         .getElementById("addNewprojectForm")
         .addEventListener("submit", e => {
             e.preventDefault();
-            console.log("hej");
+            var formData = new FormData(
+                document.getElementById("addNewprojectForm")
+            );
+            // var odst = formData.getAll();
+            debugger;
+            axios
+                .post("../api/projects.php", formData, {
+                    headers: {
+                        "Content-Type": "multipart/form-data"
+                    }
+                })
+                .then(res => {
+                    debugger;
+                });
         });
 });

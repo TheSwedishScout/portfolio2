@@ -1,5 +1,6 @@
 $dark: #111;
 $gray: #707070;
+$lightgary: #dedede;
 $whiteTrans: rgba(255, 255, 255, 0.5);
 $white: rgb(255, 255, 255);
 
@@ -27,22 +28,40 @@ body {
     &.contact {
         background-image: url("../images/backgrounds/Max-Timje-2.jpg");
     }
+    &.projects {
+        background-image: url("../images/backgrounds/Max-Timje-3.jpg");
+    }
+    &.photos {
+        background-image: url("../images/backgrounds/Max-Timje-4.jpg");
+    }
 }
 .wrapper {
     display: grid;
     width: 100%;
+    box-sizing: border-box;
     min-height: calc(100vh - 4px);
     grid-template-rows: 7rem auto auto 4rem;
     grid-row-gap: 1em;
 }
 header {
     grid-row: 1;
+    padding-top: 5px;
     margin: 4px;
 
     .logo {
         height: 2em;
         display: inline-block;
         vertical-align: sub;
+        margin: 5px;
+        img {
+            height: 100%;
+        }
+    }
+    .text {
+        display: inline;
+    }
+    .tag {
+        display: none;
     }
     h1 {
         display: inline;
@@ -51,7 +70,6 @@ header {
     }
     .tag-line {
         text-align: center;
-        margin-top: -0.5em;
     }
     nav {
         border-top: 1px solid $gray;
@@ -81,9 +99,10 @@ header {
             h1 {
                 font-size: 4em;
             }
-            .tag {
-                display: none;
+            .tag-line {
+                margin-top: -0.5em;
             }
+
             @media screen and (min-width: 400px) {
                 .tag {
                     display: inline;
@@ -113,6 +132,10 @@ form {
         font-size: 1.2em;
         margin-bottom: 10px;
         background: $white;
+        &[type="checkbox"] {
+            height: 1em;
+            width: 1em;
+        }
     }
     textarea {
         resize: vertical;
@@ -126,7 +149,49 @@ form {
         }
     }
 }
-
+#project-list {
+    list-style: none;
+    display: grid;
+    grid-auto-rows: auto;
+    grid-gap: 2em;
+    @media screen and (min-width: 400px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    & > li {
+        background: white;
+    }
+    figure {
+        //height: 127px;
+        text-align: center;
+        img {
+            max-width: 100%;
+        }
+    }
+    .links {
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        li {
+            a {
+                display: inline-block;
+                padding: 4px;
+                background: $lightgary;
+                &:hover {
+                    background: $gray;
+                    color: $lightgary;
+                }
+            }
+        }
+    }
+    p {
+        margin-top: 10px;
+    }
+    .tools {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
 footer {
     grid-row: 4;
     .socialmedia {
@@ -136,9 +201,11 @@ footer {
             display: flex;
             flex-direction: row-reverse;
             list-style: none;
-            color: rgb(52, 110, 218);
             li:not(:last-child) {
                 margin-left: 8px;
+            }
+            li a {
+                color: rgb(62, 98, 165);
             }
         }
     }
@@ -146,7 +213,7 @@ footer {
 @media screen and (min-width: 600px) {
     header {
         width: 400px;
-        margin: 0 auto;
+        margin: 6px auto;
     }
     main {
         width: 600px;

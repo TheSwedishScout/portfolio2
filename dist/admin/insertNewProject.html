@@ -39,6 +39,7 @@
                     id="addNewprojectForm"
                     method="post"
                     enctype="multipart/form-data"
+                    name="insertNewProject"
                 >
                     <label>
                         Name
@@ -55,25 +56,53 @@
                     </label>
                     <label>
                         Short description
-                        <input type="text" name="short_description" id="" />
+                        <input
+                            type="text"
+                            name="short_description"
+                            id="short_description"
+                        />
                     </label>
                     <label>
                         active url to project
-                        <input type="text" name="link" id="link" />
+                        <input type="text" name="url" id="url" />
                     </label>
                     <label>
                         link to github resp
-                        <input type="text" name="githublink" id="githublink" />
+                        <input type="text" name="github" id="github" />
                     </label>
                     <label>
                         image of project
-                        <input
-                            type="file"
-                            name="fileToUpload"
-                            id="fileToUpload"
-                        />
+                        <input type="file" name="image" id="fileToUpload" />
                     </label>
 
+                    <label>
+                        php
+                        <input type="checkbox" value="php" name="php" />
+                    </label>
+                    <label>
+                        wordpress
+                        <input
+                            type="checkbox"
+                            value="wordpress"
+                            name="wordpress"
+                        />
+                    </label>
+                    <label>
+                        html5
+                        <input type="checkbox" value="html5" name="html5" />
+                    </label>
+                    <label>
+                        css3
+                        <input type="checkbox" value="css3" name="css3" />
+                    </label>
+                    <label>
+                        JavaScript
+                        <input
+                            type="checkbox"
+                            value="JavaScript"
+                            name="JavaScript"
+                        />
+                    </label>
                     <input type="submit" name="submit" value="save" />
                 </form>
             </main>
